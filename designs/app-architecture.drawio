@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" modified="2024-02-09T05:27:38.845Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="3gmIrlJkXLaB3xhIh_Rx" version="23.1.1" type="device">
+  <diagram name="Page-1" id="mq1j022mUTeB_4BW17wl">
+    <mxGraphModel dx="1194" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QzH0s34pscY7lDOKisou-2" value="Web Client" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="197" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-3" value="Next.js&lt;br&gt;Redux&lt;br&gt;Material UI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="140" y="220" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-4" value="Auth - Login" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="200" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-5" value="AWS Lambda" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="QzH0s34pscY7lDOKisou-4" vertex="1">
+          <mxGeometry x="50" y="40" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-6" value="Web Server" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="477" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-7" value=".NET Web Api&lt;br&gt;AWS EC2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="130" y="510" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.004;entryY=0.217;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="QzH0s34pscY7lDOKisou-2" target="QzH0s34pscY7lDOKisou-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="447" as="sourcePoint" />
+            <mxPoint x="590" y="157" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="217" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" target="QzH0s34pscY7lDOKisou-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="257" as="sourcePoint" />
+            <mxPoint x="450" y="397" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="257" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-10" value="JWT Token" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="410" y="235" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-11" value="Validate Credentials" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="385" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="QzH0s34pscY7lDOKisou-3" target="QzH0s34pscY7lDOKisou-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="447" as="sourcePoint" />
+            <mxPoint x="450" y="397" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-17" value="DB&lt;br&gt;AWS RDS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="150" y="637" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="QzH0s34pscY7lDOKisou-6" target="QzH0s34pscY7lDOKisou-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-20" value="Transactions" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="317" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-22" value="AWS Lambda&lt;br&gt;Plaid Api" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="650" y="350" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-23" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" target="QzH0s34pscY7lDOKisou-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="277" as="sourcePoint" />
+            <mxPoint x="450" y="327" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="250" y="337" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-24" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="QzH0s34pscY7lDOKisou-2" target="QzH0s34pscY7lDOKisou-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="377" as="sourcePoint" />
+            <mxPoint x="450" y="327" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="230" y="377" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-25" value="Bank Auth" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="365" y="307" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-26" value="Transactions data" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="365" y="352" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QzH0s34pscY7lDOKisou-28" value="CRUD Operations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="110" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
