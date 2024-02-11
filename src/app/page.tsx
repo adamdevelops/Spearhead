@@ -1,17 +1,26 @@
 "use client";
 import { ExampleButton, LayoutContainer } from "./components";
+import { useAppDispatch, useAppSelector } from "./lib/hooks";
+import { setCounterState } from "./lib/store/counterSlice";
 
 export default function Home() {
-  const handleExampleButtonClick = () => {
-    alert("You clicked me!");
-  };
+  const counterState = useAppSelector((state) => state.counter);
+  const dispatch = useAppDispatch();
 
   return (
     <main>
       <LayoutContainer>
         <h1>Spearhead</h1>
+        <p>{`You clicked ${counterState.count} times`}</p>
         <div>
-          <ExampleButton label="Click me!" onClick={handleExampleButtonClick} />
+          <ExampleButton
+            label="+ Add"
+            onClick={() => dispatch(setCounterState(counterState.count + 1))}
+          />
+          <ExampleButton
+            label="- Subtract"
+            onClick={() => dispatch(setCounterState(counterState.count - 1))}
+          />
         </div>
       </LayoutContainer>
     </main>
