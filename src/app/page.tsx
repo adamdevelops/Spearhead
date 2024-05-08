@@ -1,5 +1,6 @@
 "use client";
 import { ExampleButton, LayoutContainer } from "./components";
+import MonthlyChart from "./components/MonthlyChart/MonthlyChart";
 import { useAppDispatch, useAppSelector } from "./lib/hooks";
 import { setCounterState } from "./lib/store/counterSlice";
 
@@ -23,6 +24,7 @@ export default function Home() {
           />
         </div>
       </LayoutContainer>
+      <MonthlyChart />
     </main>
   );
 }
