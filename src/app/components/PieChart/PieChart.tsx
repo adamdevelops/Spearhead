@@ -1,58 +1,51 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as d3 from "d3";
 import { PieChartData } from "@/app/models/PieChartData";
 
-const PieChart = ({ data } : any) => {
-  const ref = useRef();
+type DataItem = {
+  name: string;
+  value: number;
+};
 
-  useEffect(() => {
-    // Define dimensions and radius
-    const width = 300;
-    const height = 300;
-    const radius = Math.min(width, height) / 2;
-    const innerRadius = radius * 0.5; // Adjust the ratio to change the size of the hole
+type PieChartProps = {
+  width: number;
+  height: number;
+  data: {name: string, value: number}[];
+};
 
-    // Define color scale
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
+const MARGIN = 30;
 
-    // Define arc
-    const arc = d3.arc()
-      .innerRadius(innerRadius)
-      .outerRadius(radius);
+const colors = ["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"];
 
-    // Define pie layout
-    const pie = d3.pie<PieChartData>()
-      .value(d => d.value)
-      .sort(null);
 
-    // Select the SVG element
-    const svg = d3.select(ref.current)
-      .attr('width', width)
-      .attr('height', height)
-      .append('g')
-      .attr('transform', `translate(${width / 2},${height / 2})`);
+export const PieChart = ({ width, height, data }: PieChartProps) => {
+  const radius = Math.min(width, height) / 2 - MARGIN;
 
-    // Generate donut chart
-    const arcs = svg.selectAll('arc')
-      .data(pie(data))  
-      .enter()
-      .append('g')
-      .attr('class', 'arc');
-
-    // Append path for each arc
-    arcs.append('path')
-      .attr('d', arc)
-      .attr('fill', (d, i) => color(i));
-
-    // Append text labels
-    arcs.append('text')
-      .attr('transform', d => `translate(${arc.centroid(d)})`)
-      .attr('dy', '0.35em')
-      .text(d => d.data.label);
+  const pie = useMemo(() => {
+    const pieGenerator = d3.pie<any, DataItem>().value((d) => d.value);
+    return pieGenerator(data);
   }, [data]);
 
-  return (
-    <svg ref={ref}></svg>
-  );
+  const arcs = useMemo(() => {
+    const arcPathGenerator = d3.arc();
+    return pie.map((p) =>
+      arcPathGenerator({
+        innerRadius: 0,
+        outerRadius: radius,
+        startAngle: p.startAngle,
+        endAngle: p.endAngle,
+      })
+    );
+  }, [radius, pie]);
 
+  return (
+    <svg width={width} height={height} style={{ display: "inline-block" }}>
+      <g transform={`translate(${width / 2}, ${height / 2})`}>
+        {arcs.map((arc: any, i) => {
+          return <path key={i} d={arc} fill={colors[i]} />;
+        })}
+      </g>
+    </svg>
+  );
 }
+

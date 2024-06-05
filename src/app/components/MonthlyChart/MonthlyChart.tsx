@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PieChart from "../PieChart/PieChart";
+import { PieChart } from "../PieChart/PieChart";
 
 export default function MonthlyChart() {
   const [data, setData ] = useState()
@@ -10,11 +10,18 @@ export default function MonthlyChart() {
     { label: 'C', value: 50 }
   ];
 
+  const dummyData = [
+    {name:"Mark", value: 90},
+    {name:"Robert", value: 12},
+    {name:"Emily", value: 34},
+    {name:"Marion", value: 53},
+    {name:"Nicolas", value: 98},
+  ]
+
   return (
     <div className="monthly-chart-area">
       <div className="pie-chart-area">
-        <span>hi111</span>
-        <PieChart data={pieData} />
+        <PieChart data={dummyData} width={700} height={400} />
       </div>
       <div className="expenses-area">
         <h3>Monthly Expenses</h3>
